@@ -9,3 +9,4 @@ The driver uses procfs interface (/proc/am2301),
 reporting T, RH and read status [OK/error, checksum/error, no data]
 
 # am2301
+# am2301
