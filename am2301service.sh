@@ -4,7 +4,7 @@ ok_count=0
 error_count=0
 
 # This is a your personal key for thingspeak channel
-$CHANNEL_KEY=ABCDEFGHIJKLMNOPQ
+CHANNEL_KEY=ABCDEFGHIJKLMNOPQ
 
 while (true) 
 do 
