@@ -83,7 +83,7 @@ static int am2301_show(struct seq_file *m, void *v)
 	int data[5];
 	int rh,t;
 
-	ktime_t start, stop;
+	u64 start, stop;
 	int nodata_error = 0; // 1 if no data from AM2301
 
         gpio_direction_output(gpio, 1);
@@ -117,10 +117,10 @@ static int am2301_show(struct seq_file *m, void *v)
 		
 		// now measure length of high state in nanoseconds
 
-		start = ktime_get_real();
+		start = ktime_get_real_ns();
 		wait_for_gpio(LOW);
-		stop = ktime_get_real();
-		res = (int)(stop.tv64 - start.tv64);
+		stop = ktime_get_real_ns();
+		res = (int)(stop - start);
 
 		// 1st data bit is shorter, why ? 
 
